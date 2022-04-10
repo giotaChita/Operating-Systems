@@ -1,4 +1,5 @@
 #! bin/bash
+#! /usr/bin/bash
 
 #when i create the file from touch command:
 # chmod +x test2.h 
