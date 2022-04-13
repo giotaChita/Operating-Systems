@@ -1,7 +1,7 @@
 # Operating-Systems
 Operating systems -> Shell programming 
 
-##Task 1
+# Task 1
 
 Write a script modify with the following syntax:
 
