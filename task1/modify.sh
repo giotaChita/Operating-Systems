@@ -81,7 +81,6 @@ lowerToUpper(){
     fi
     #uppercasing file name without recursion 
     file="$1"
-    echo $file
     newfile="${file^^}"
     renameFile $file $newfile
     echo $newfile
@@ -116,50 +115,53 @@ sedCommand() {
 
 recursive(){
     local pwdCurrent=`pwd`
-    echo $pwdCurrent
     local filename=`basename $1`
-    echo $filename
     local newdirec=`dirname $1`
-    echo $newdirec
+
     cd $newdirec
     newpdw=`pwd`
+
     #check if it is a directory
     if [ -d $filename ]; then
         local temp=`ls $filename`
-        if [ -n "$filename" ]; then
+
+        if [ "$(ls -A "$newdirec/$filename")" ]; then
+
             cd $filename 
             for file in *
-            do
-                recursive $filename $2 
+            do  
+                recursive "$(pwd)/$file" $2
+
             done
-            cd $filename
+
+            cd ..
         fi
     fi
 
     if test -f "$filename"; then
-        filefound=$true 
+        filefound=true 
     elif test -d "$filename"; then
-        filefound=$true
+        filefound=true
     else 
-        filefound=$false
+        filefound=false
     fi 
 
     if [ $filefound ];then 
         if [ $2 == "-u" ]; then 
-            oldname=$filename        
-            newfile=lowerToUpper $filename
+            oldname=$filename     
+            lowerToUpper $filename
         elif [ $2 == "-l" ]; then
             oldname=$filename
-            newfile=upperToLower $filename
+            upperToLower $filename
         else
             oldname=$filename 
-            newfile=sedCommand $2 $filename 
+            sedCommand $2 $filename 
         fi 
     else 
         error 
         echo "$filename not found !"
     fi 
-    cd $pwdCurrent
+    # cd $pwdCurrent
 }
 
 input_user() {
