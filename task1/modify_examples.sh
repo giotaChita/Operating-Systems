@@ -1,21 +1,30 @@
 #!/usr/bin/bash
 
-# echo "create directories..."
-# mkdir "university"
-# cd "university"
-# mkdir "SUMMERCOURS"
-# mkdir "wintercours" 
-# mkdir "wintercours/OPTICALFIBER"
-# mkdir "wintercours/SAE"
-# mkdir "wintercours/deepLearning"
-# mkdir "SUMMERCOURS/telecommunations"
-# mkdir "SUMMERCOURS/AI"
-# mkdir "SUMMERCOURS/optimization" 
-# ls -R 
+echo "create directories..."
+mkdir "university"
+mkdir "university/SUMMERCOURS"
+mkdir "university/wintercours" 
+mkdir "university/wintercours/OPTICALFIBER"
+mkdir "university/wintercours/SAE"
+mkdir "university/wintercours/deepLearning"
+mkdir "university/SUMMERCOURS/telecommunations"
+mkdir "university/SUMMERCOURS/AI"
+mkdir "university/SUMMERCOURS/optimization" 
+touch "university/wintercours/dir"
+chmod +x "university/wintercours/dir"
+touch "university/SUMMERCOURS/SHELL"
+chmod +x "university/SUMMERCOURS/SHELL"
 
-# echo "----------------"
-# echo "modify -h"
-# ../task1.sh -h
+echo "create files for testing"
+touch testfile 
+chmod +x testfile
+touch TESTFORL
+chmod +x TESTFORL
+touch testingSED
+chmod +x testingSED
+echo "--------help--------"
+echo "modify -h"
+../task1.sh -h
 
 echo "-------ls before---------"
 ls
@@ -41,22 +50,13 @@ echo "-------no argument given---------"
 echo
 echo "-------wrong command---------"
 ./modify.sh -k  
-# ls -R
+echo
+echo "-------recursive sed---------"
+./modify.sh -r s/e/E/g /home/giota/university
+echo
+echo "-------recursive upper---------"
+./modify.sh -r -u /home/giota/univErsity
+echo
+echo "-------recursive lower---------"
+./modify.sh -r -l /home/giota/UNIVERSITY 
 
-# ls -R
-
-# echo "----------------"
-
-# ls -R
-
-# echo "----------------"
-
-# ls -R
-
-# echo "----------------"
-
-# ls -R
-
-# echo "----------------"
-
-# ls -R
