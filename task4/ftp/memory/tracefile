@@ -1,0 +1,64 @@
+READ c8 ... okay
+READ 413c ... okay
+READ bf68 ... okay
+READ ffdc ... okay
+READ 13fec ... okay
+READ 17f98 ... okay
+READ 1bfa8 ... okay
+READ 1ffb8 ... okay
+READ 23fc8 ... okay
+READ 27fd8 ... okay
+READ 2bfe8 ... okay
+READ 2ffc6 ... okay
+READ 33fa4 ... okay
+READ 37fb4 ... okay
+READ 3bfc4 ... okay
+READ 3ffd4 ... okay
+READ 43fe4 ... okay
+READ 47ff4 ... okay
+READ 4bfd2 ... okay
+READ 4ffb0 ... okay
+READ 53fc0 ... okay
+READ 57fd0 ... okay
+READ 5bfe0 ... okay
+READ 5fffa ... okay
+READ 63f9c ... okay
+READ 67ff2 ... okay
+READ 6bfbc ... okay
+READ 6fff4 ... okay
+READ 73ff0 ... okay
+READ 77fec ... okay
+READ 7bff2 ... okay
+READ 7ffee ... okay
+READ 83ff4 ... page fault
+READ 87ff0 ... page fault
+READ 8bfd8 ... page fault
+READ 8ffe8 ... page fault
+READ 93fee ... page fault
+READ 97fa4 ... page fault
+READ 9bff0 ... page fault
+READ 9ffc4 ... page fault
+READ a3fd4 ... page fault
+READ a7fe4 ... page fault
+READ abff4 ... page fault
+READ afff0 ... page fault
+READ b3fec ... page fault
+READ b7ff2 ... page fault
+READ bbfd0 ... page fault
+READ bfff4 ... page fault
+READ c3ff0 ... page fault
+READ c7ff6 ... page fault
+READ cbfe8 ... page fault
+READ cffee ... page fault
+READ d3ff4 ... page fault
+READ d7fdc ... page fault
+READ dbfec ... page fault
+READ dfff2 ... page fault
+READ e3fee ... page fault
+READ e7ff4 ... page fault
+READ ebfc8 ... page fault
+READ effd8 ... page fault
+READ f3fe8 ... page fault
+READ f7fee ... page fault
+READ fbfea ... page fault
+READ fc000 ... page fault
