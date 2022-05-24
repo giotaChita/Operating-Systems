@@ -1,6 +1,3 @@
-// create semaphore (or connect to existing one) -> segmet
-// perform operations on the semaphore -> semop
-// control operations on the message queue -> semctl()
 
 #include <stdlib.h>
 #include <time.h>
@@ -89,11 +86,11 @@ void childProcess(){
   signal(SIGINT, handler_term);
   while(1){
     printf("Philosopher[%d] is thinking...\n", process);
-    sleep(rand() %10);
+    sleep(rand() %5+1);
     grab_forks();
     printf("Philosopher[%d] is eating...\n", process);
     eat_count += 1;
-    sleep(rand()%10);
+    sleep(rand()%5+1);
     printf("Philosopher[%d] is done eating...\n",process);
     printf("==================================\n");
     put_away_forks();
@@ -150,6 +147,3 @@ it to zero and OS will automatically choose the address.*/
   return 0;
 
   }
-
-
-
