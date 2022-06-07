@@ -1,4 +1,3 @@
-
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/mman.h>
@@ -46,7 +45,7 @@ int main(int argc, char* argv[]){
     int help_flag = 0;
     int val = 0;
 
-    if (argc == 1) {
+    if (argc == 1 || argc > 4) {
         help_function();
         return 0;
     }
@@ -65,12 +64,16 @@ int main(int argc, char* argv[]){
                     printf("Error: not valid arguments.\n");
                 return 1;   
             case 'm':
-                mmap_method = 1;
-                val = 1;
-                break;
+                if (argc == 4){
+                    mmap_method = 1;
+                    val = 1;
+                    break;
+                }
+                else 
+                    printf("Error: not valid arguments.\n");
+                return 1;   
             default:
                 printf("error: unknown option. For help use: copy [-h]\n");
-                // break;
                 return 1;
         }
     }
@@ -79,6 +82,7 @@ int main(int argc, char* argv[]){
         char* newfile=argv[2+val];
         //Open for reading only. 
         int fd_from = open(oldfile,O_RDONLY); // returns a file descriptor > 0 : an index in the process's table of open file descriptors.
+       
         //Open for reading and writin and if the file does not exist the file is created.
         int fd_to = open(newfile,O_RDWR|O_CREAT,0666);
         if(mmap_method){
@@ -89,6 +93,10 @@ int main(int argc, char* argv[]){
             printf("\nmmap method: %f\n", cpu_time_used);
         }
         else{
+            if (argc!=3) {
+                help_function();
+                return 0;
+            }
             start = clock();
             copy_read_write(fd_from,fd_to);
             end = clock();
